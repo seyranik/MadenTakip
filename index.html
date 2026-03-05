@@ -1019,6 +1019,7 @@ function checkAlarms() {
     if (alarm.low)  { cur<=alarm.low ?fire('low', `${name} ${alarm.low}₺ altına düştü.` ):reset('low');  }
   });
   syncAlarmsToSW();
+  syncAlarmsToFCM(); // fired durumunu Worker'a gönder
 }
 
 // ═══════════════════════════════════════
